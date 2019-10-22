@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# BUILD and INSTALL
+BUILD/
+SOFT_POSIT/

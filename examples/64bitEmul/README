@@ -1,0 +1,5 @@
+# Without 64bit operation emulation: divq    -24(%rbp)
+../../SOFT_POSIT/bin/clang      -S test.c -o test-64bit.s
+
+# With emulation: calll   __udivdi3
+../../SOFT_POSIT/bin/clang -m32 -S test.c -o test-32bit.s
