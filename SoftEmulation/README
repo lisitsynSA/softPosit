@@ -1,0 +1,1 @@
+../SOFT_POSIT/bin/clang++ main.cpp Float32.cpp
