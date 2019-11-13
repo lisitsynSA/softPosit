@@ -1,0 +1,1 @@
+../../SOFT_POSIT/bin/clang test.c divsf3.c subsf3.c addsf3.c divdf3.c subdf3.c adddf3.c
