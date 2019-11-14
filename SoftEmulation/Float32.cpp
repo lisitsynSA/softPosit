@@ -27,7 +27,7 @@ CMP Float32::cmp (const Float32& rhs) const{
     return CMP::EQ;
 }
 
-Float32::operator float() const {
+float Float32::getFloat() const {
     return val;
 }
 
@@ -36,10 +36,10 @@ const Float32& Float32::operator+= (const Float32& rhs) {
     return *this;
 }
 
-const Float32& Float32::operator-= (const Float32& rhs) {
+/*const Float32& Float32::operator-= (const Float32& rhs) {
     val -= rhs.val;
     return *this;
-}
+}*/
 
 const Float32& Float32::operator*= (const Float32& rhs) {
     val *= rhs.val;

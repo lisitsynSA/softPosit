@@ -16,9 +16,8 @@ public:
     const Float32& operator=(const Float32& rhs) noexcept override;
     const Float32 neg() const override;
     CMP cmp (const Float32& rhs) const override;
-    operator float() const override;
+    float getFloat() const override;
     const Float32& operator+=(const Float32& rhs) override;
-    const Float32& operator-=(const Float32& rhs) override;
     const Float32& operator*=(const Float32& rhs) override;
     const Float32& operator/=(const Float32& rhs) override;
 };

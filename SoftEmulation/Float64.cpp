@@ -27,7 +27,7 @@ CMP Float64::cmp (const Float64& rhs) const{
     return CMP::EQ;
 }
 
-Float64::operator float() const {
+float Float64::getFloat() const {
     return (float)val;
 }
 
@@ -36,10 +36,10 @@ const Float64& Float64::operator+= (const Float64& rhs) {
     return *this;
 }
 
-const Float64& Float64::operator-= (const Float64& rhs) {
+/*const Float64& Float64::operator-= (const Float64& rhs) {
     val -= rhs.val;
     return *this;
-}
+}*/
 
 const Float64& Float64::operator*= (const Float64& rhs) {
     val *= rhs.val;

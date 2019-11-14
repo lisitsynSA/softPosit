@@ -2,6 +2,7 @@
 #include <iomanip>
 #include "Float32.h"
 #include "Float64.h"
+#include "SoftFloat32.h"
 #define STEPS 20
 
 int main()
@@ -9,7 +10,7 @@ int main()
     int i = 0;
     Float32 x_f[STEPS] = {4.0, 4.25};
     Float64 x_d[STEPS] = {4.0, 4.25};
-    Float32 x_f32[STEPS] = {4.0, 4.25};
+    SoftFloat32 x_f32[STEPS] = {4.0, 4.25};
 
     std::cout << "[##] |  FLOAT  |  DOUBLE | SOFT FLOAT\n"
               << "-------------------------------------\n"

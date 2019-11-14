@@ -17,19 +17,29 @@ public:
     virtual const T& operator=(const T& rhs) noexcept = 0;
     virtual const T neg() const = 0;
     virtual CMP cmp(const T& rhs) const = 0;
-    virtual operator float() const = 0;
+    virtual float getFloat() const = 0;
 
     virtual const T& operator+=(const T& rhs) = 0;
-    virtual const T& operator-=(const T& rhs) = 0;
     virtual const T& operator*=(const T& rhs) = 0;
     virtual const T& operator/=(const T& rhs) = 0;
 
+    const T& operator-=(const T& rhs) {return *this += rhs.neg();}
     const T operator+() const { return *this; }
     const T operator-() const { return neg(); }
+
+    friend std::ostream& operator<<(std::ostream &os, const T& rhs)
+    { return os << rhs.getFloat(); }
 };
 
 template <class T>
 const T operator+(const T lhs, const T rhs)
+{
+    T tmp(lhs);
+    tmp += rhs;
+    return tmp;
+}
+template <class T>
+const T operator+(const double lhs, const T rhs)
 {
     T tmp(lhs);
     tmp += rhs;
@@ -45,6 +55,14 @@ const T operator-(const T lhs, const T rhs)
 }
 
 template <class T>
+const T operator-(const double lhs, const T rhs)
+{
+    T tmp(lhs);
+    tmp -= rhs;
+    return tmp;
+}
+
+template <class T>
 const T operator*(const T lhs, const T rhs)
 {
     T tmp(lhs);
@@ -53,7 +71,23 @@ const T operator*(const T lhs, const T rhs)
 }
 
 template <class T>
+const T operator*(const double lhs, const T rhs)
+{
+    T tmp(lhs);
+    tmp *= rhs;
+    return tmp;
+}
+
+template <class T>
 const T operator/(const T lhs, const T rhs)
+{
+    T tmp(lhs);
+    tmp /= rhs;
+    return tmp;
+}
+
+template <class T>
+const T operator/(const double lhs, const T rhs)
 {
     T tmp(lhs);
     tmp /= rhs;
