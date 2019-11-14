@@ -14,7 +14,7 @@ int main()
     SoftFloat32 x_f32[STEPS] = {4.0, 4.25};
     SoftFloat64 x_f64[STEPS] = {4.0, 4.25};
 
-    std::cout << "[##] |  FLOAT  |  DOUBLE | SOFT FLOAT | SOFT DOUBLE\n"
+    std::cout << "[##] |  FLOAT  |  DOUBLE | S_FLOAT | S_DOUBLE\n"
               << "---------------------------------------------------\n"
               << "[00] |   4.000 |   4.000 |   4.000 |   4.000\n"
               << "[01] |   4.250 |   4.250 |   4.250 |   4.250\n";
