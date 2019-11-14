@@ -36,11 +36,6 @@ const Float64& Float64::operator+= (const Float64& rhs) {
     return *this;
 }
 
-/*const Float64& Float64::operator-= (const Float64& rhs) {
-    val -= rhs.val;
-    return *this;
-}*/
-
 const Float64& Float64::operator*= (const Float64& rhs) {
     val *= rhs.val;
     return *this;

@@ -36,11 +36,6 @@ const Float32& Float32::operator+= (const Float32& rhs) {
     return *this;
 }
 
-/*const Float32& Float32::operator-= (const Float32& rhs) {
-    val -= rhs.val;
-    return *this;
-}*/
-
 const Float32& Float32::operator*= (const Float32& rhs) {
     val *= rhs.val;
     return *this;
