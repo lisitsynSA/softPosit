@@ -1,3 +1,6 @@
+#ifndef SOFTTYPE_H
+#define SOFTTYPE_H
+
 enum CMP{
     EQ = 0,
     GT = 1,
@@ -110,3 +113,5 @@ bool operator>=(const T& lhs, const T& rhs)
         return true;
     return false;
 }
+
+#endif // SOFTTYPE_H

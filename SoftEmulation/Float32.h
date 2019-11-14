@@ -1,6 +1,9 @@
 #include <iostream>
 #include "softType.h"
 
+#ifndef FLOAT32_H
+#define FLOAT32_H
+
 class Float32 final : public softType<Float32>
 {
 public:
@@ -19,3 +22,5 @@ public:
     const Float32& operator*=(const Float32& rhs) override;
     const Float32& operator/=(const Float32& rhs) override;
 };
+
+#endif // FLOAT32_H
