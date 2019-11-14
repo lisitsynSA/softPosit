@@ -1,1 +1,1 @@
-../SOFT_POSIT/bin/clang++ main.cpp Float32.cpp Float64.cpp SoftFloat32.cpp builtins/negsf2.c builtins/addsf3.c builtins/subsf3.c builtins/mulsf3.c builtins/divsf3.c builtins/comparesf2.c
+../SOFT_POSIT/bin/clang++ main.cpp Float32.cpp Float64.cpp SoftFloat32.cpp SoftFloat64.cpp builtins/negsf2.c builtins/addsf3.c builtins/subsf3.c builtins/mulsf3.c builtins/divsf3.c builtins/comparesf2.c builtins/negdf2.c builtins/adddf3.c builtins/subdf3.c builtins/muldf3.c builtins/divdf3.c builtins/comparedf2.c

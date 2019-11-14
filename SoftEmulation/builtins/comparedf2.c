@@ -39,6 +39,8 @@
 #define DOUBLE_PRECISION
 #include "fp_lib.h"
 
+#define COMPILER_RT_ALIAS(name, aliasname)
+
 enum LE_RESULT { LE_LESS = -1, LE_EQUAL = 0, LE_GREATER = 1, LE_UNORDERED = 1 };
 
 COMPILER_RT_ABI enum LE_RESULT __ledf2(fp_t a, fp_t b) {
