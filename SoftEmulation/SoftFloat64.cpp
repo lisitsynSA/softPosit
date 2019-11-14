@@ -1,7 +1,5 @@
 #include "SoftFloat64.h"
 
-#define EPS 0.001
-
 #define DOUBLE_PRECISION
 #include "builtins/fp_lib.h"
 extern fp_t __negdf2(fp_t a);

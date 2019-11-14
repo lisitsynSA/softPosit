@@ -1,5 +1,6 @@
 #include <iostream>
 #include "softType.h"
+#include "SoftPosit/softposit_cpp.h"
 
 #ifndef SOFTPOSIT32_H
 #define SOFTPOSIT32_H
@@ -7,9 +8,10 @@
 class SoftPosit32 final : public softType<SoftPosit32>
 {
 public:
-    float val;
+    posit32 val;
     SoftPosit32(): val(0) {}
-    SoftPosit32(float init): val(init) {}
+    SoftPosit32(double init): val(init) {}
+    SoftPosit32(posit32 init): val(init) {}
     SoftPosit32(const SoftPosit32& init): val(init.val) {}
     ~SoftPosit32() override {}
 

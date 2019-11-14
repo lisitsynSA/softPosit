@@ -1,7 +1,5 @@
 #include "Float64.h"
 
-#define EPS 0.001
-
 const Float64& Float64::operator=(const Float64& rhs) noexcept {
     if (this != &rhs) {
         val = rhs.val;

@@ -1,7 +1,5 @@
 #include "Float32.h"
 
-#define EPS 0.001
-
 const Float32& Float32::operator=(const Float32& rhs) noexcept {
     if (this != &rhs) {
         val = rhs.val;

@@ -1,7 +1,5 @@
 #include "SoftPosit32.h"
 
-#define EPS 0.001
-
 const SoftPosit32& SoftPosit32::operator=(const SoftPosit32& rhs) noexcept {
     if (this != &rhs) {
         val = rhs.val;
@@ -28,7 +26,7 @@ CMP SoftPosit32::cmp (const SoftPosit32& rhs) const{
 }
 
 float SoftPosit32::getFloat() const {
-    return val;
+    return (float) val.toDouble();
 }
 
 const SoftPosit32& SoftPosit32::operator+= (const SoftPosit32& rhs) {

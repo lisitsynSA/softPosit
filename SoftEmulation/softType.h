@@ -1,6 +1,8 @@
 #ifndef SOFTTYPE_H
 #define SOFTTYPE_H
 
+#define EPS 0.001
+
 enum CMP{
     EQ = 0,
     GT = 1,
