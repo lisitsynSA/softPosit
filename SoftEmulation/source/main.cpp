@@ -17,11 +17,12 @@ int main()
     SoftFloat64 x_f64[STEPS] = {4.0, 4.25};
     SoftPosit32 x_p32[STEPS] = {4.0, 4.25};
     SoftPosit16 x_p16[STEPS] = {4.0, 4.25};
+    posit8 x_p8[STEPS] = {4.0, 4.25};
 
-    std::cout << "[##] |  FLOAT  |  DOUBLE | S_FLOAT | S_DOUBLE| POSIT32 | POSIT16\n"
+    std::cout << "[##] |  FLOAT  |  DOUBLE | S_FLOAT | S_DOUBLE| POSIT32 | POSIT16 | POSIT8\n"
               << "---------------------------------------------------\n"
-              << "[00] |   4.000 |   4.000 |   4.000 |   4.000 |   4.000 |   4.000\n"
-              << "[01] |   4.250 |   4.250 |   4.250 |   4.250 |   4.250 |   4.250\n";
+              << "[00] |   4.000 |   4.000 |   4.000 |   4.000 |   4.000 |   4.000 |   4.000\n"
+              << "[01] |   4.250 |   4.250 |   4.250 |   4.250 |   4.250 |   4.250 |   4.250\n";
     for (i = 2; i < STEPS; i++)
     {
         x_f[i] = 108.0 - (815.0 - 1500.0/x_f[i-2])/x_f[i-1];
@@ -30,6 +31,7 @@ int main()
         x_f64[i] = 108.0 - (815.0 - 1500.0/x_f64[i-2])/x_f64[i-1];
         x_p32[i] = 108.0 - (815.0 - 1500.0/x_p32[i-2])/x_p32[i-1];
         x_p16[i] = 108.0 - (815.0 - 1500.0/x_p16[i-2])/x_p16[i-1];
+        x_p8[i] = 108.0 - (815.0 - 1500.0/x_p8[i-2])/x_p8[i-1];
         std::cout << std::setprecision(3)<< std::fixed
                   << "[" << std::setw(2) << std::setfill('0') << i << "] | "
                   << std::setw(7) << std::setfill(' ') << x_f[i] << " | "
@@ -37,7 +39,8 @@ int main()
                   << std::setw(7) << std::setfill(' ') << x_f32[i] << " | "
                   << std::setw(7) << std::setfill(' ') << x_f64[i] << " | "
                   << std::setw(7) << std::setfill(' ') << x_p32[i] << " | "
-                  << std::setw(7) << std::setfill(' ') << x_p16[i] << "\n";
+                  << std::setw(7) << std::setfill(' ') << x_p16[i] << " | "
+                  << std::setw(7) << std::setfill(' ') << x_p8[i] << "\n";
     }
     return 0;
 }

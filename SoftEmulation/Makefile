@@ -45,7 +45,16 @@ SOURCES_C=\
 	source/SoftPosit/s_addMagsP16.c \
 	source/SoftPosit/s_subMagsP16.c \
 	source/SoftPosit/c_convertDecToPosit16.c \
-	source/SoftPosit/c_convertPosit16ToDec.c
+	source/SoftPosit/c_convertPosit16ToDec.c \
+	source/SoftPosit/p8_add.c \
+	source/SoftPosit/p8_div.c \
+	source/SoftPosit/p8_mul.c \
+	source/SoftPosit/p8_sub.c \
+	source/SoftPosit/p8_lt.c \
+	source/SoftPosit/s_addMagsP8.c \
+	source/SoftPosit/s_subMagsP8.c \
+	source/SoftPosit/c_convertDecToPosit8.c \
+	source/SoftPosit/c_convertPosit8ToDec.c
 
 OBJECTS=$(SOURCES:.cpp=.o) $(SOURCES_C:.c=.o)
 TARGET=muller
