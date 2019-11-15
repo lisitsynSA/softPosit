@@ -6,6 +6,8 @@
 #include "SoftFloat64.h"
 #include "SoftPosit32.h"
 #include "SoftPosit16.h"
+#include "SoftPosit8.h"
+#include "SoftPosit/softposit_cpp.h"
 #include "half.hpp"
 using half_float::half;
 using namespace half_float::literal;
@@ -20,7 +22,7 @@ int main()
     half x_f16[STEPS] = {4.0_h, 4.25_h};
     SoftPosit32 x_p32[STEPS] = {4.0, 4.25};
     SoftPosit16 x_p16[STEPS] = {4.0, 4.25};
-    posit8 x_p8[STEPS] = {4.0, 4.25};
+    SoftPosit8 x_p8[STEPS] = {4.0, 4.25};
 
     std::cout << "[##] | S_DOUBLE| S_FLOAT | POSIT32 |  S_HALF | POSIT16 |  POSIT8 |\n"
               << "------------------------------------------------------------------\n"

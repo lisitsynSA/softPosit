@@ -15,6 +15,7 @@ SOURCES=\
 	source/SoftFloat64.cpp \
 	source/SoftPosit32.cpp \
 	source/SoftPosit16.cpp \
+	source/SoftPosit8.cpp \
 	source/builtins/negsf2.cpp \
 	source/builtins/addsf3.cpp \
 	source/builtins/subsf3.cpp \
