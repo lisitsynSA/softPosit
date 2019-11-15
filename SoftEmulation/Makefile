@@ -34,6 +34,8 @@ SOURCES_C=\
 	source/SoftPosit/p32_mul.c \
 	source/SoftPosit/p32_sub.c \
 	source/SoftPosit/p32_lt.c \
+	source/SoftPosit/p32_mulAdd.c \
+	source/SoftPosit/s_mulAddP32.c \
 	source/SoftPosit/s_addMagsP32.c \
 	source/SoftPosit/s_subMagsP32.c \
 	source/SoftPosit/c_convertDecToPosit32.c \
@@ -43,6 +45,8 @@ SOURCES_C=\
 	source/SoftPosit/p16_mul.c \
 	source/SoftPosit/p16_sub.c \
 	source/SoftPosit/p16_lt.c \
+	source/SoftPosit/p16_mulAdd.c \
+	source/SoftPosit/s_mulAddP16.c \
 	source/SoftPosit/s_addMagsP16.c \
 	source/SoftPosit/s_subMagsP16.c \
 	source/SoftPosit/c_convertDecToPosit16.c \
@@ -52,6 +56,8 @@ SOURCES_C=\
 	source/SoftPosit/p8_mul.c \
 	source/SoftPosit/p8_sub.c \
 	source/SoftPosit/p8_lt.c \
+	source/SoftPosit/p8_mulAdd.c \
+	source/SoftPosit/s_mulAddP8.c \
 	source/SoftPosit/s_addMagsP8.c \
 	source/SoftPosit/s_subMagsP8.c \
 	source/SoftPosit/c_convertDecToPosit8.c \
