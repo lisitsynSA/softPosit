@@ -8,10 +8,11 @@
 class SoftPosit16 final : public softType<SoftPosit16>
 {
 public:
-    posit16 val;
-    SoftPosit16(): val(0) {}
-    SoftPosit16(double init): val(init) {}
-    SoftPosit16(posit16 init): val(init) {}
+    quire16 val;
+    SoftPosit16() { val.clr(); }
+    SoftPosit16(double init) { val.clr(); val.qma((posit16)init, (posit16)1.0); }
+    SoftPosit16(posit16 init) { val.clr(); val.qma((posit16)init, (posit16)1.0); }
+    SoftPosit16(quire16 init): val(init) {}
     SoftPosit16(const SoftPosit16& init): val(init.val) {}
     ~SoftPosit16() override {}
 
