@@ -1,0 +1,69 @@
+HEADERS_FOLDERS=-I ./headers -I ./headers/builtins -I ./headers/SoftPosit
+BUILD_FOLDER=build
+SOURCE_FOLDER=source
+
+CC=gcc
+CPP=g++
+CFLAGS=-c -Wall ${HEADERS_FOLDERS} 
+LDFLAGS=
+
+SOURCES=\
+	source/main.cpp \
+	source/Float32.cpp \
+	source/Float64.cpp \
+	source/SoftFloat32.cpp \
+	source/SoftFloat64.cpp \
+	source/SoftPosit32.cpp \
+	source/SoftPosit16.cpp \
+	source/builtins/negsf2.cpp \
+	source/builtins/addsf3.cpp \
+	source/builtins/subsf3.cpp \
+	source/builtins/mulsf3.cpp \
+	source/builtins/divsf3.cpp \
+	source/builtins/comparesf2.cpp \
+	source/builtins/negdf2.cpp \
+	source/builtins/adddf3.cpp \
+	source/builtins/subdf3.cpp \
+	source/builtins/muldf3.cpp \
+	source/builtins/divdf3.cpp \
+	source/builtins/comparedf2.cpp
+SOURCES_C=\
+	source/SoftPosit/p32_add.c \
+	source/SoftPosit/p32_div.c \
+	source/SoftPosit/p32_mul.c \
+	source/SoftPosit/p32_sub.c \
+	source/SoftPosit/p32_lt.c \
+	source/SoftPosit/s_addMagsP32.c \
+	source/SoftPosit/s_subMagsP32.c \
+	source/SoftPosit/c_convertDecToPosit32.c \
+	source/SoftPosit/c_convertPosit32ToDec.c \
+	source/SoftPosit/p16_add.c \
+	source/SoftPosit/p16_div.c \
+	source/SoftPosit/p16_mul.c \
+	source/SoftPosit/p16_sub.c \
+	source/SoftPosit/p16_lt.c \
+	source/SoftPosit/s_addMagsP16.c \
+	source/SoftPosit/s_subMagsP16.c \
+	source/SoftPosit/c_convertDecToPosit16.c \
+	source/SoftPosit/c_convertPosit16ToDec.c
+
+OBJECTS=$(SOURCES:.cpp=.o) $(SOURCES_C:.c=.o)
+TARGET=muller
+
+#targets($@): prerequisites($<)
+#        <commands>
+
+all: $(SOURCES_CPP) $(SOURCES_C) $(TARGET)
+
+$(TARGET): $(OBJECTS) 
+	$(CPP) $(LDFLAGS) $(OBJECTS) -lm -o $@
+
+.cpp.o:
+	$(CPP) $(CFLAGS) $< -o $@
+
+.c.o:
+	$(CC) $(CFLAGS) $< -o $@
+
+
+clean:
+	rm -rf $(TARGET) $(OBJECTS)

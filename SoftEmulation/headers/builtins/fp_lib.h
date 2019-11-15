@@ -20,6 +20,10 @@
 #ifndef FP_LIB_HEADER
 #define FP_LIB_HEADER
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 #include "int_lib.h"
 #include "int_math.h"
 #include <limits.h>
@@ -314,6 +318,10 @@ static __inline long double __compiler_rt_logbl(long double x) {
   return crt_logbl(x);
 }
 #endif
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif // FP_LIB_HEADER
