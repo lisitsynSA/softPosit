@@ -1,16 +1,16 @@
-#include "SoftPosit32.h"
+#include "SoftQuire32.h"
 
 const uint64_t MAX_UINT = 18446744073709551615UL;
 
-const SoftPosit32& SoftPosit32::operator=(const SoftPosit32& rhs) noexcept {
+const SoftQuire32& SoftQuire32::operator=(const SoftQuire32& rhs) noexcept {
     if (this != &rhs) {
         val = rhs.val;
     }
     return *this;
 }
 
-const SoftPosit32 SoftPosit32::neg () const{
-    SoftPosit32 tmp(val);
+const SoftQuire32 SoftQuire32::neg () const{
+    SoftQuire32 tmp(val);
     if (val.v0 == 0 && val.v1 == 0 && val.v2 == 0 && val.v3 == 0 &&\
         val.v4 == 0 && val.v5 == 0 && val.v6 == 0 && val.v7 == 0)
         return tmp;
@@ -70,9 +70,9 @@ const SoftPosit32 SoftPosit32::neg () const{
     return tmp;
 }
 
-CMP SoftPosit32::cmp (const SoftPosit32& rhs) const{
-    SoftPosit32 tmp(val);
-    SoftPosit32 rtmp(rhs.val);
+CMP SoftQuire32::cmp (const SoftQuire32& rhs) const{
+    SoftQuire32 tmp(val);
+    SoftQuire32 rtmp(rhs.val);
     if (this == &rhs) {
         return CMP::EQ;
     }
@@ -85,13 +85,13 @@ CMP SoftPosit32::cmp (const SoftPosit32& rhs) const{
     return CMP::EQ;
 }
 
-float SoftPosit32::getFloat() const {
-    SoftPosit32 tmp(val);
+float SoftQuire32::getFloat() const {
+    SoftQuire32 tmp(val);
     return (float) tmp.val.toPosit().toDouble();
 }
 
-const SoftPosit32& SoftPosit32::operator+= (const SoftPosit32& rhs) {
-    SoftPosit32 rtmp(rhs.val);
+const SoftQuire32& SoftQuire32::operator+= (const SoftQuire32& rhs) {
+    SoftQuire32 rtmp(rhs.val);
     // 7
     uint64_t v7 = val.v7;
     val.v7 += rhs.val.v7;
@@ -133,34 +133,34 @@ const SoftPosit32& SoftPosit32::operator+= (const SoftPosit32& rhs) {
     return *this;
 }
 
-const SoftPosit32& SoftPosit32::operator*= (const SoftPosit32& rhs) {
-    SoftPosit32 tmp(0.0);
-    SoftPosit32 rtmp(rhs.val);
+const SoftQuire32& SoftQuire32::operator*= (const SoftQuire32& rhs) {
+    SoftQuire32 tmp(0.0);
+    SoftQuire32 rtmp(rhs.val);
     tmp.val.qma(rtmp.val.toPosit(), val.toPosit());
     val = tmp.val;
     return *this;
 }
 
-const SoftPosit32& SoftPosit32::operator/= (const SoftPosit32& rhs) {
-    SoftPosit32 tmp(0.0);
-    SoftPosit32 rtmp(rhs.val);
+const SoftQuire32& SoftQuire32::operator/= (const SoftQuire32& rhs) {
+    SoftQuire32 tmp(0.0);
+    SoftQuire32 rtmp(rhs.val);
     tmp.val.qma(1.0/rtmp.val.toPosit(), val.toPosit());
     val = tmp.val;
     return *this;
 }
 
-const SoftPosit32& SoftPosit32::qma(const SoftPosit32& rhs1, const SoftPosit32& rhs2)
+const SoftQuire32& SoftQuire32::qma(const SoftQuire32& rhs1, const SoftQuire32& rhs2)
 {
-    SoftPosit32 rtmp1(rhs1.val);
-    SoftPosit32 rtmp2(rhs2.val);
+    SoftQuire32 rtmp1(rhs1.val);
+    SoftQuire32 rtmp2(rhs2.val);
     val.qma(rtmp1.val.toPosit(), rtmp2.val.toPosit());
     return *this;
 }
 
-const SoftPosit32& SoftPosit32::qms(const SoftPosit32& rhs1, const SoftPosit32& rhs2)
+const SoftQuire32& SoftQuire32::qms(const SoftQuire32& rhs1, const SoftQuire32& rhs2)
 {
-    SoftPosit32 rtmp1(rhs1.val);
-    SoftPosit32 rtmp2(rhs2.val);
+    SoftQuire32 rtmp1(rhs1.val);
+    SoftQuire32 rtmp2(rhs2.val);
     val.qms(rtmp1.val.toPosit(), rtmp2.val.toPosit());
     return *this;
 }

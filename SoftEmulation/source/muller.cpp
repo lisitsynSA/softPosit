@@ -4,9 +4,9 @@
 #include "Float64.h"
 #include "SoftFloat32.h"
 #include "SoftFloat64.h"
-#include "SoftPosit32.h"
-#include "SoftPosit16.h"
-#include "SoftPosit8.h"
+#include "SoftQuire32.h"
+#include "SoftQuire16.h"
+#include "SoftQuire8.h"
 #include "SoftPosit/softposit_cpp.h"
 #include "half.hpp"
 using half_float::half;
@@ -18,27 +18,27 @@ using namespace half_float::literal;
 
 int main()
 {
-    /*SoftPosit32 a(-2.0);
-    SoftPosit32 b(1.0);
+    /*SoftQuire32 a(-2.0);
+    SoftQuire32 b(1.0);
 
     printf("a = %f[%lX;%lX;%lX;%lX;%lX;%lX;%lX;%lX]\n", a.getFloat(), a.val.v0, a.val.v1, a.val.v2, a.val.v3, a.val.v4, a.val.v5, a.val.v6, a.val.v7);
     printf("b = %f[%lX;%lX;%lX;%lX;%lX;%lX;%lX;%lX]\n", b.getFloat(), b.val.v0, b.val.v1, b.val.v2, b.val.v3, b.val.v4, b.val.v5, b.val.v6, b.val.v7);
     printf("a-b = %f[%lX;%lX;%lX;%lX;%lX;%lX;%lX;%lX]\n", (a-b).getFloat(), (a-b).val.v0, (a-b).val.v1, (a-b).val.v2, (a-b).val.v3, (a-b).val.v4, (a-b).val.v5, (a-b).val.v6, (a-b).val.v7);
     */
-    /*SoftPosit8 b(1.0);
-    SoftPosit8 a(2.0);
+    /*SoftQuire8 b(1.0);
+    SoftQuire8 a(2.0);
 
     printf("a = %f [%X]\n", a.getFloat(), a.val.value);
     printf("b = %f [%X]\n", b.getFloat(), b.val.value);
     printf("(b/a) = %f [%X]\n", (b/a).getFloat(), (b/a).val.value);*/
 
-    /*SoftPosit16 ar(-375.0);
-    SoftPosit16 arg(375.0);
-    SoftPosit16 arg1(108.0);
-    SoftPosit16 arg2(815.0);
-    SoftPosit16 arg3(1500.0);
-    SoftPosit16 x0(4.0);
-    SoftPosit16 x1(4.25);
+    /*SoftQuire16 ar(-375.0);
+    SoftQuire16 arg(375.0);
+    SoftQuire16 arg1(108.0);
+    SoftQuire16 arg2(815.0);
+    SoftQuire16 arg3(1500.0);
+    SoftQuire16 x0(4.0);
+    SoftQuire16 x1(4.25);
     printf("ar = %f [%lX;%lX]\n", ar.getFloat(), ar.val.lvalue, ar.val.rvalue);
     printf("arg = %f [%lX;%lX]\n", arg.getFloat(), arg.val.lvalue, arg.val.rvalue);
     printf("-arg = %f [%lX;%lX]\n", (-arg).getFloat(), (-arg).val.lvalue, (-arg).val.rvalue);
@@ -56,9 +56,9 @@ int main()
     SoftFloat64 x_f64[STEPS] = {4.0, 4.25};
     SoftFloat32 x_f32[STEPS] = {4.0, 4.25};
     half x_f16[STEPS] = {4.0_h, 4.25_h};
-    SoftPosit32 x_pq32[STEPS] = {4.0, 4.25};
-    SoftPosit16 x_pq16[STEPS] = {4.0, 4.25};
-    SoftPosit8 x_pq8[STEPS] = {4.0, 4.25};
+    SoftQuire32 x_pq32[STEPS] = {4.0, 4.25};
+    SoftQuire16 x_pq16[STEPS] = {4.0, 4.25};
+    SoftQuire8 x_pq8[STEPS] = {4.0, 4.25};
     posit32 x_p32[STEPS] = {4.0, 4.25};
     posit16 x_p16[STEPS] = {4.0, 4.25};
     posit8 x_p8[STEPS] = {4.0, 4.25};

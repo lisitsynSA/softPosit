@@ -1,24 +1,24 @@
-#include "SoftPosit16.h"
+#include "SoftQuire16.h"
 
 const uint64_t MAX_UINT = 18446744073709551615UL;
 
-const SoftPosit16& SoftPosit16::operator=(const SoftPosit16& rhs) noexcept {
+const SoftQuire16& SoftQuire16::operator=(const SoftQuire16& rhs) noexcept {
     if (this != &rhs) {
         val = rhs.val;
     }
     return *this;
 }
 
-const SoftPosit16 SoftPosit16::neg () const{
-    SoftPosit16 tmp(val);
+const SoftQuire16 SoftQuire16::neg () const{
+    SoftQuire16 tmp(val);
     tmp.val.lvalue = MAX_UINT - val.lvalue;
     tmp.val.rvalue = -val.rvalue;
     return tmp;
 }
 
-CMP SoftPosit16::cmp (const SoftPosit16& rhs) const{
-    SoftPosit16 tmp(val);
-    SoftPosit16 rtmp(rhs.val);
+CMP SoftQuire16::cmp (const SoftQuire16& rhs) const{
+    SoftQuire16 tmp(val);
+    SoftQuire16 rtmp(rhs.val);
     if (this == &rhs) {
         return CMP::EQ;
     }
@@ -31,12 +31,12 @@ CMP SoftPosit16::cmp (const SoftPosit16& rhs) const{
     return CMP::EQ;
 }
 
-float SoftPosit16::getFloat() const {
-    SoftPosit16 tmp(val);
+float SoftQuire16::getFloat() const {
+    SoftQuire16 tmp(val);
     return (float) tmp.val.toPosit().toDouble();
 }
 
-const SoftPosit16& SoftPosit16::operator+= (const SoftPosit16& rhs) {
+const SoftQuire16& SoftQuire16::operator+= (const SoftQuire16& rhs) {
     uint64_t rvalue = val.rvalue;
     val.rvalue += rhs.val.rvalue;
     val.lvalue += rhs.val.lvalue;
@@ -45,34 +45,34 @@ const SoftPosit16& SoftPosit16::operator+= (const SoftPosit16& rhs) {
     return *this;
 }
 
-const SoftPosit16& SoftPosit16::operator*= (const SoftPosit16& rhs) {
-    SoftPosit16 tmp(0.0);
-    SoftPosit16 rtmp(rhs.val);
+const SoftQuire16& SoftQuire16::operator*= (const SoftQuire16& rhs) {
+    SoftQuire16 tmp(0.0);
+    SoftQuire16 rtmp(rhs.val);
     tmp.val.qma(rtmp.val.toPosit(), val.toPosit());
     val = tmp.val;
     return *this;
 }
 
-const SoftPosit16& SoftPosit16::operator/= (const SoftPosit16& rhs) {
-    SoftPosit16 tmp(0.0);
-    SoftPosit16 rtmp(rhs.val);
+const SoftQuire16& SoftQuire16::operator/= (const SoftQuire16& rhs) {
+    SoftQuire16 tmp(0.0);
+    SoftQuire16 rtmp(rhs.val);
     tmp.val.qma(1.0/rtmp.val.toPosit(), val.toPosit());
     val = tmp.val;
     return *this;
 }
 
-const SoftPosit16& SoftPosit16::qma(const SoftPosit16& rhs1, const SoftPosit16& rhs2)
+const SoftQuire16& SoftQuire16::qma(const SoftQuire16& rhs1, const SoftQuire16& rhs2)
 {
-    SoftPosit16 rtmp1(rhs1.val);
-    SoftPosit16 rtmp2(rhs2.val);
+    SoftQuire16 rtmp1(rhs1.val);
+    SoftQuire16 rtmp2(rhs2.val);
     val.qma(rtmp1.val.toPosit(), rtmp2.val.toPosit());
     return *this;
 }
 
-const SoftPosit16& SoftPosit16::qms(const SoftPosit16& rhs1, const SoftPosit16& rhs2)
+const SoftQuire16& SoftQuire16::qms(const SoftQuire16& rhs1, const SoftQuire16& rhs2)
 {
-    SoftPosit16 rtmp1(rhs1.val);
-    SoftPosit16 rtmp2(rhs2.val);
+    SoftQuire16 rtmp1(rhs1.val);
+    SoftQuire16 rtmp2(rhs2.val);
     val.qms(rtmp1.val.toPosit(), rtmp2.val.toPosit());
     return *this;
 }

@@ -2,16 +2,16 @@
 #include "Float64.h"
 #include "SoftFloat32.h"
 #include "SoftFloat64.h"
-#include "SoftPosit32.h"
-#include "SoftPosit16.h"
-#include "SoftPosit8.h"
+#include "SoftQuire32.h"
+#include "SoftQuire16.h"
+#include "SoftQuire8.h"
 #include "SoftPosit/softposit_cpp.h"
 #include "half.hpp"
 using half_float::half;
 using namespace half_float::literal;
 #include "myneuro.h"
 
-typedef SoftPosit32 TYPE;
+typedef SoftQuire32 TYPE;
 
 int main(int argc, char *argv[])
 {
