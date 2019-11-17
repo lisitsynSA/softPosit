@@ -8,6 +8,9 @@
 #include "SoftQuire32.h"
 #include "SoftQuire16.h"
 #include "SoftQuire8.h"
+#include "SoftPosit32.h"
+#include "SoftPosit16.h"
+#include "SoftPosit8.h"
 
 #define STEPS 20
 
@@ -56,9 +59,9 @@ int main()
     SoftQuire32 x_pq32[STEPS] = {4.0, 4.25};
     SoftQuire16 x_pq16[STEPS] = {4.0, 4.25};
     SoftQuire8 x_pq8[STEPS] = {4.0, 4.25};
-    posit32 x_p32[STEPS] = {4.0, 4.25};
-    posit16 x_p16[STEPS] = {4.0, 4.25};
-    posit8 x_p8[STEPS] = {4.0, 4.25};
+    SoftPosit32 x_p32[STEPS] = {4.0, 4.25};
+    SoftPosit16 x_p16[STEPS] = {4.0, 4.25};
+    SoftPosit8 x_p8[STEPS] = {4.0, 4.25};
     posit32 x_p32_fma[STEPS] = {4.0, 4.25};
     posit16 x_p16_fma[STEPS] = {4.0, 4.25};
     posit8 x_p8_fma[STEPS] = {4.0, 4.25};

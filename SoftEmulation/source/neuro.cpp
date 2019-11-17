@@ -6,6 +6,9 @@
 #include "SoftQuire32.h"
 #include "SoftQuire16.h"
 #include "SoftQuire8.h"
+#include "SoftPosit32.h"
+#include "SoftPosit16.h"
+#include "SoftPosit8.h"
 #include "myneuro.h"
 
 typedef Float32 TYPE;
