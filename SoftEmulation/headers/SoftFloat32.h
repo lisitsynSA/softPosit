@@ -1,8 +1,8 @@
 #include <iostream>
 #include "softType.h"
 
-#ifndef SOFTFLOAT32_H
-#define SOFTFLOAT32_H
+#ifndef SoftFloat32_H
+#define SoftFloat32_H
 
 class SoftFloat32 final : public softType<SoftFloat32>
 {
@@ -20,6 +20,8 @@ public:
     const SoftFloat32& operator+=(const SoftFloat32& rhs) override;
     const SoftFloat32& operator*=(const SoftFloat32& rhs) override;
     const SoftFloat32& operator/=(const SoftFloat32& rhs) override;
+    const SoftFloat32& qma(const SoftFloat32& rhs1, const SoftFloat32& rhs2) override { return *this += (rhs1*rhs2); }
+    const SoftFloat32& qms(const SoftFloat32& rhs1, const SoftFloat32& rhs2) override { return *this -= (rhs1*rhs2); }
 };
 
-#endif // SOFTFLOAT32_H
+#endif // SoftFloat32_H

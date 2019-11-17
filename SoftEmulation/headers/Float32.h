@@ -20,6 +20,8 @@ public:
     const Float32& operator+=(const Float32& rhs) override;
     const Float32& operator*=(const Float32& rhs) override;
     const Float32& operator/=(const Float32& rhs) override;
+    const Float32& qma(const Float32& rhs1, const Float32& rhs2) override { return *this += (rhs1*rhs2); }
+    const Float32& qms(const Float32& rhs1, const Float32& rhs2) override { return *this -= (rhs1*rhs2); }
 };
 
 #endif // FLOAT32_H

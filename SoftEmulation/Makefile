@@ -4,8 +4,8 @@ SOURCE_FOLDER=source
 
 CC=gcc
 CPP=g++
-CFLAGS=-c -Wall ${HEADERS_FOLDERS} 
-LDFLAGS=
+CFLAGS= -g -c -Wall ${HEADERS_FOLDERS}
+LDFLAGS= -g
 
 SOURCES=\
 	source/Float32.cpp \

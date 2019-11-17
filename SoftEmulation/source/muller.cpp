@@ -8,7 +8,6 @@
 #include "SoftQuire32.h"
 #include "SoftQuire16.h"
 #include "SoftQuire8.h"
-#include "SoftPosit/softposit_cpp.h"
 
 #define STEPS 20
 

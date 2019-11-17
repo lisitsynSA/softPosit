@@ -6,10 +6,9 @@
 #include "SoftQuire32.h"
 #include "SoftQuire16.h"
 #include "SoftQuire8.h"
-#include "SoftPosit/softposit_cpp.h"
 #include "myneuro.h"
 
-typedef SoftQuire32 TYPE;
+typedef Float32 TYPE;
 
 int main(int argc, char *argv[])
 {
@@ -48,16 +47,16 @@ int main(int argc, char *argv[])
             bb->train(cba,tar2);
             i++;
             if (i%1000 == 0)
-                std::cout << i/100 << "%\n";
+            {
+                std::cout << "\n[" << i/100 << "%]\n";
+                bb->query(abc);
+                bb->query(cba);
+            }
         }
 
-        std::cout <<"___________________RESULT_____________\n";
+        std::cout <<"\n___________________RESULT_____________\n";
         bb->query(abc);
-        std::cout <<"______\n";
         bb->query(cba);
-
-
-        std::cout <<"_______________THE____END_______________\n";
 
     return 0;
 }

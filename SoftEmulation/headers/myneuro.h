@@ -28,9 +28,9 @@ public:
 
                    for(int hid =0; hid < in; hid++)
                    {
-                       matrix[hid][ou] += (learnRate * errors[ou] * enteredVal[hid]);
+                       matrix[hid][ou].qma(learnRate * errors[ou], enteredVal[hid]);
                    }
-                   matrix[in][ou] += (learnRate * errors[ou]);
+                   matrix[in][ou].qma(learnRate, errors[ou]);
                }
            };
            void setIO(int inputs, int outputs)
@@ -59,7 +59,7 @@ public:
                    T tmpS = 0.0;
                    for(int inp =0; inp < in; inp++)
                    {
-                       tmpS += inputs[inp] * matrix[inp][hid];
+                       tmpS.qma(inputs[inp], matrix[inp][hid]);
                    }
                    tmpS += matrix[in][hid];
                    hidden[hid] = sigmoida(tmpS);
@@ -74,7 +74,7 @@ public:
                errors = (T*) malloc((out)*sizeof(T));
                for(int ou =0; ou < out; ou++)
                {
-                   errors[ou] = (targets[ou] - hidden[ou]) * sigmoidasDerivate(hidden[ou]);
+                   errors[ou].qma(targets[ou] - hidden[ou], sigmoidasDerivate(hidden[ou]));
                }
            };
            void calcHidError(T *targets,T **outWeights,int inS, int outS)
@@ -85,7 +85,7 @@ public:
                    errors[hid] = 0.0;
                    for(int ou =0; ou < outS; ou++)
                    {
-                       errors[hid] += targets[ou] * outWeights[hid][ou];
+                       errors[hid].qma(targets[ou], outWeights[hid][ou]);
                    }
                    errors[hid] *= sigmoidasDerivate(hidden[hid]);
                }
@@ -166,7 +166,6 @@ void myNeuro<T>::feedForwarding(bool ok)
         {
             std::cout <<list[nlCount-1].hidden[out] <<"\n";
         }
-        std::cout <<"\n";
         return;
     }
     else
@@ -214,7 +213,6 @@ void myNeuro<T>::printArray(T *arr, int s)
     {
         std::cout <<arr[inp] <<"\n";
     }
-    std::cout <<"\n";
 }
 
 
