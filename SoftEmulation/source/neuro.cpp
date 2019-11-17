@@ -1,14 +1,12 @@
 #include "Float32.h"
 #include "Float64.h"
+#include "SoftFloat16.h"
 #include "SoftFloat32.h"
 #include "SoftFloat64.h"
 #include "SoftQuire32.h"
 #include "SoftQuire16.h"
 #include "SoftQuire8.h"
 #include "SoftPosit/softposit_cpp.h"
-#include "half.hpp"
-using half_float::half;
-using namespace half_float::literal;
 #include "myneuro.h"
 
 typedef SoftQuire32 TYPE;
@@ -44,13 +42,13 @@ int main(int argc, char *argv[])
         bb->query(cba);
 
         int i=0;
-        while(i<100000)
+        while(i<10000)
         {
             bb->train(abc,tar1);
             bb->train(cba,tar2);
             i++;
-            if (i%10000 == 0)
-                std::cout << i/1000 << "%\n";
+            if (i%1000 == 0)
+                std::cout << i/100 << "%\n";
         }
 
         std::cout <<"___________________RESULT_____________\n";

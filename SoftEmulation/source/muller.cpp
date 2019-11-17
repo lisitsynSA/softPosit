@@ -2,15 +2,13 @@
 #include <iomanip>
 #include "Float32.h"
 #include "Float64.h"
+#include "SoftFloat16.h"
 #include "SoftFloat32.h"
 #include "SoftFloat64.h"
 #include "SoftQuire32.h"
 #include "SoftQuire16.h"
 #include "SoftQuire8.h"
 #include "SoftPosit/softposit_cpp.h"
-#include "half.hpp"
-using half_float::half;
-using namespace half_float::literal;
 
 #define STEPS 20
 
@@ -55,7 +53,7 @@ int main()
 
     SoftFloat64 x_f64[STEPS] = {4.0, 4.25};
     SoftFloat32 x_f32[STEPS] = {4.0, 4.25};
-    half x_f16[STEPS] = {4.0_h, 4.25_h};
+    SoftFloat16 x_f16[STEPS] = {4.0, 4.25};
     SoftQuire32 x_pq32[STEPS] = {4.0, 4.25};
     SoftQuire16 x_pq16[STEPS] = {4.0, 4.25};
     SoftQuire8 x_pq8[STEPS] = {4.0, 4.25};

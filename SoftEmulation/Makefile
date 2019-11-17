@@ -10,6 +10,7 @@ LDFLAGS=
 SOURCES=\
 	source/Float32.cpp \
 	source/Float64.cpp \
+	source/SoftFloat16.cpp \
 	source/SoftFloat32.cpp \
 	source/SoftFloat64.cpp \
 	source/SoftQuire32.cpp \
