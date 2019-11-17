@@ -8,7 +8,6 @@ CFLAGS=-c -Wall ${HEADERS_FOLDERS}
 LDFLAGS=
 
 SOURCES=\
-	source/main.cpp \
 	source/Float32.cpp \
 	source/Float64.cpp \
 	source/SoftFloat32.cpp \
@@ -73,15 +72,18 @@ SOURCES_C=\
 	source/SoftPosit/c_convertQuire8ToPosit8.c
 
 OBJECTS=$(SOURCES:.cpp=.o) $(SOURCES_C:.c=.o)
-TARGET=muller
+TARGETS=muller neuro
 
 #targets($@): prerequisites($<)
 #        <commands>
 
-all: $(SOURCES_CPP) $(SOURCES_C) $(TARGET)
+all: $(SOURCES_CPP) $(SOURCES_C) $(TARGETS)
 
-$(TARGET): $(OBJECTS) 
-	$(CPP) $(LDFLAGS) $(OBJECTS) -lm -o $@
+muller: $(OBJECTS)
+	$(CPP) $(LDFLAGS) source/muller.cpp $(OBJECTS) -lm -o $@  ${HEADERS_FOLDERS}
+
+neuro: $(OBJECTS)
+	$(CPP) $(LDFLAGS) source/neuro.cpp $(OBJECTS) -lm -o $@  ${HEADERS_FOLDERS}
 
 .cpp.o:
 	$(CPP) $(CFLAGS) $< -o $@
@@ -91,4 +93,4 @@ $(TARGET): $(OBJECTS)
 
 
 clean:
-	rm -rf $(TARGET) $(OBJECTS)
+	rm -rf $(TARGETS) $(OBJECTS)
