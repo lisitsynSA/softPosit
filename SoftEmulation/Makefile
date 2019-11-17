@@ -74,16 +74,16 @@ SOURCES_C=\
 OBJECTS=$(SOURCES:.cpp=.o) $(SOURCES_C:.c=.o)
 TARGETS=muller neuro
 
-#targets($@): prerequisites($<)
+#targets($@): prerequisites(1:$<; all:$^)
 #        <commands>
 
 all: $(SOURCES_CPP) $(SOURCES_C) $(TARGETS)
 
-muller: $(OBJECTS)
-	$(CPP) $(LDFLAGS) source/muller.cpp $(OBJECTS) -lm -o $@  ${HEADERS_FOLDERS}
+muller: $(OBJECTS) source/muller.cpp
+	$(CPP) $(LDFLAGS) $^ -lm -o $@  ${HEADERS_FOLDERS}
 
-neuro: $(OBJECTS)
-	$(CPP) $(LDFLAGS) source/neuro.cpp $(OBJECTS) -lm -o $@  ${HEADERS_FOLDERS}
+neuro: $(OBJECTS) source/neuro.cpp
+	$(CPP) $(LDFLAGS) $^ -lm -o $@  ${HEADERS_FOLDERS}
 
 .cpp.o:
 	$(CPP) $(CFLAGS) $< -o $@
