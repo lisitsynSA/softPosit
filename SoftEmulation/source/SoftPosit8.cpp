@@ -53,3 +53,19 @@ const SoftPosit8& SoftPosit8::operator/= (const SoftPosit8& rhs) {
     val = tmp.val;
     return *this;
 }
+
+const SoftPosit8& SoftPosit8::qma(const SoftPosit8& rhs1, const SoftPosit8& rhs2)
+{
+    SoftPosit8 rtmp1(rhs1.val);
+    SoftPosit8 rtmp2(rhs2.val);
+    val.qma(rtmp1.val.toPosit(), rtmp2.val.toPosit());
+    return *this;
+}
+
+const SoftPosit8& SoftPosit8::qms(const SoftPosit8& rhs1, const SoftPosit8& rhs2)
+{
+    SoftPosit8 rtmp1(rhs1.val);
+    SoftPosit8 rtmp2(rhs2.val);
+    val.qms(rtmp1.val.toPosit(), rtmp2.val.toPosit());
+    return *this;
+}

@@ -1037,7 +1037,8 @@ struct quire8{
 		 value = q.v;
 		 return *this;
 	}
-	quire8& qms(posit16 a, posit16 b){ // q -= a*b
+	// FIX: quire8& qms(posit16 a, posit16 b)
+	quire8& qms(posit8 a, posit8 b){ // q -= a*b
 		 quire8_t q = q8_fdp_sub(castQ8(value), castP8(a.value), castP8(b.value));
 		 value = q.v;
 		 return *this;

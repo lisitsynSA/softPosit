@@ -148,3 +148,19 @@ const SoftPosit32& SoftPosit32::operator/= (const SoftPosit32& rhs) {
     val = tmp.val;
     return *this;
 }
+
+const SoftPosit32& SoftPosit32::qma(const SoftPosit32& rhs1, const SoftPosit32& rhs2)
+{
+    SoftPosit32 rtmp1(rhs1.val);
+    SoftPosit32 rtmp2(rhs2.val);
+    val.qma(rtmp1.val.toPosit(), rtmp2.val.toPosit());
+    return *this;
+}
+
+const SoftPosit32& SoftPosit32::qms(const SoftPosit32& rhs1, const SoftPosit32& rhs2)
+{
+    SoftPosit32 rtmp1(rhs1.val);
+    SoftPosit32 rtmp2(rhs2.val);
+    val.qms(rtmp1.val.toPosit(), rtmp2.val.toPosit());
+    return *this;
+}

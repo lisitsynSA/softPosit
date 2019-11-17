@@ -24,8 +24,10 @@ public:
     virtual const T& operator+=(const T& rhs) = 0;
     virtual const T& operator*=(const T& rhs) = 0;
     virtual const T& operator/=(const T& rhs) = 0;
+    virtual const T& qma(const T& rhs1, const T& rhs2) { return *this += rhs1*rhs2; }
+    virtual const T& qms(const T& rhs1, const T& rhs2) { return *this -= rhs1*rhs2; }
 
-    const T& operator-=(const T& rhs) {return *this += rhs.neg();}
+    const T& operator-=(const T& rhs) { return *this += rhs.neg(); }
     const T operator+() const { return *this; }
     const T operator-() const { return neg(); }
 

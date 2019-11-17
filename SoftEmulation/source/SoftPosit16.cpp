@@ -60,3 +60,19 @@ const SoftPosit16& SoftPosit16::operator/= (const SoftPosit16& rhs) {
     val = tmp.val;
     return *this;
 }
+
+const SoftPosit16& SoftPosit16::qma(const SoftPosit16& rhs1, const SoftPosit16& rhs2)
+{
+    SoftPosit16 rtmp1(rhs1.val);
+    SoftPosit16 rtmp2(rhs2.val);
+    val.qma(rtmp1.val.toPosit(), rtmp2.val.toPosit());
+    return *this;
+}
+
+const SoftPosit16& SoftPosit16::qms(const SoftPosit16& rhs1, const SoftPosit16& rhs2)
+{
+    SoftPosit16 rtmp1(rhs1.val);
+    SoftPosit16 rtmp2(rhs2.val);
+    val.qms(rtmp1.val.toPosit(), rtmp2.val.toPosit());
+    return *this;
+}

@@ -23,6 +23,8 @@ public:
     const SoftPosit8& operator+=(const SoftPosit8& rhs) override;
     const SoftPosit8& operator*=(const SoftPosit8& rhs) override;
     const SoftPosit8& operator/=(const SoftPosit8& rhs) override;
+    const SoftPosit8& qma(const SoftPosit8& rhs1, const SoftPosit8& rhs2) override;
+    const SoftPosit8& qms(const SoftPosit8& rhs1, const SoftPosit8& rhs2) override;
 };
 
 #endif // SOFTPOSIT8_H
