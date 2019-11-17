@@ -1,5 +1,7 @@
 #include "SoftPosit16.h"
 
+const uint64_t MAX_UINT = 18446744073709551615UL;
+
 const SoftPosit16& SoftPosit16::operator=(const SoftPosit16& rhs) noexcept {
     if (this != &rhs) {
         val = rhs.val;
@@ -9,9 +11,9 @@ const SoftPosit16& SoftPosit16::operator=(const SoftPosit16& rhs) noexcept {
 
 const SoftPosit16 SoftPosit16::neg () const{
     SoftPosit16 tmp(val);
-    SoftPosit16 res(0.0);
-    res.val.qms((posit16) 1.0, tmp.val.toPosit());
-    return res;
+    tmp.val.lvalue = MAX_UINT - val.lvalue;
+    tmp.val.rvalue = -val.rvalue;
+    return tmp;
 }
 
 CMP SoftPosit16::cmp (const SoftPosit16& rhs) const{
@@ -35,8 +37,11 @@ float SoftPosit16::getFloat() const {
 }
 
 const SoftPosit16& SoftPosit16::operator+= (const SoftPosit16& rhs) {
-    SoftPosit16 rtmp(rhs.val);
-    val.qma(rtmp.val.toPosit(), (posit16)1.0);
+    uint64_t rvalue = val.rvalue;
+    val.rvalue += rhs.val.rvalue;
+    val.lvalue += rhs.val.lvalue;
+    if (val.rvalue < rhs.val.rvalue || val.rvalue < rvalue)
+        val.lvalue += 1;
     return *this;
 }
 

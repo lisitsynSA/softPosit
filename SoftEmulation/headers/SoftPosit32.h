@@ -8,10 +8,11 @@
 class SoftPosit32 final : public softType<SoftPosit32>
 {
 public:
-    posit32 val;
-    SoftPosit32(): val(0) {}
-    SoftPosit32(double init): val(init) {}
-    SoftPosit32(posit32 init): val(init) {}
+    quire32 val;
+    SoftPosit32() { val.clr(); }
+    SoftPosit32(double init) { val.clr(); val.qma((posit32)init, (posit32)1.0); }
+    SoftPosit32(posit32 init) { val.clr(); val.qma((posit32)init, (posit32)1.0); }
+    SoftPosit32(quire32 init): val(init) {}
     SoftPosit32(const SoftPosit32& init): val(init.val) {}
     ~SoftPosit32() override {}
 

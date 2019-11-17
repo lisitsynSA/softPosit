@@ -14,8 +14,45 @@ using namespace half_float::literal;
 
 #define STEPS 20
 
+//#include <cstdio>
+
 int main()
 {
+    /*SoftPosit32 a(-2.0);
+    SoftPosit32 b(1.0);
+
+    printf("a = %f[%lX;%lX;%lX;%lX;%lX;%lX;%lX;%lX]\n", a.getFloat(), a.val.v0, a.val.v1, a.val.v2, a.val.v3, a.val.v4, a.val.v5, a.val.v6, a.val.v7);
+    printf("b = %f[%lX;%lX;%lX;%lX;%lX;%lX;%lX;%lX]\n", b.getFloat(), b.val.v0, b.val.v1, b.val.v2, b.val.v3, b.val.v4, b.val.v5, b.val.v6, b.val.v7);
+    printf("a-b = %f[%lX;%lX;%lX;%lX;%lX;%lX;%lX;%lX]\n", (a-b).getFloat(), (a-b).val.v0, (a-b).val.v1, (a-b).val.v2, (a-b).val.v3, (a-b).val.v4, (a-b).val.v5, (a-b).val.v6, (a-b).val.v7);
+    */
+    /*SoftPosit8 b(1.0);
+    SoftPosit8 a(2.0);
+
+    printf("a = %f [%X]\n", a.getFloat(), a.val.value);
+    printf("b = %f [%X]\n", b.getFloat(), b.val.value);
+    printf("(b/a) = %f [%X]\n", (b/a).getFloat(), (b/a).val.value);*/
+
+    /*SoftPosit16 ar(-375.0);
+    SoftPosit16 arg(375.0);
+    SoftPosit16 arg1(108.0);
+    SoftPosit16 arg2(815.0);
+    SoftPosit16 arg3(1500.0);
+    SoftPosit16 x0(4.0);
+    SoftPosit16 x1(4.25);
+    printf("ar = %f [%lX;%lX]\n", ar.getFloat(), ar.val.lvalue, ar.val.rvalue);
+    printf("arg = %f [%lX;%lX]\n", arg.getFloat(), arg.val.lvalue, arg.val.rvalue);
+    printf("-arg = %f [%lX;%lX]\n", (-arg).getFloat(), (-arg).val.lvalue, (-arg).val.rvalue);
+    printf("arg1 = %f [%lX;%lX]\n", arg1.getFloat(), arg1.val.lvalue, arg1.val.rvalue);
+    printf("arg2 = %f [%lX;%lX]\n", arg2.getFloat(), arg2.val.lvalue, arg2.val.rvalue);
+    printf("arg3 = %f [%lX;%lX]\n", arg3.getFloat(), arg3.val.lvalue, arg3.val.rvalue);
+    printf("x0 = %f [%lX;%lX]\n", x0.getFloat(), x0.val.lvalue, x0.val.rvalue);
+    printf("x1 = %f [%lX;%lX]\n", x1.getFloat(), x1.val.lvalue, x1.val.rvalue);
+    printf("-arg3/x0 = %f [%lX;%lX] %f\n", (-arg3/x0).getFloat(), (-arg3/x0).val.lvalue, (-arg3/x0).val.rvalue, 1500.0/4.0);
+    printf("arg2 - arg3/x0 = %f [%lX;%lX] %f\n", (arg2 - arg3/x0).getFloat(), (arg2 - arg3/x0).val.lvalue, (arg2 - arg3/x0).val.rvalue, 815.0 - 1500.0/4.0);
+    printf("(arg2 - arg3/x0)/x1 = %f [%lX;%lX] %f\n", ((arg2 - arg3/x0)/x1).getFloat(), ((arg2 - arg3/x0)/x1).val.lvalue, ((arg2 - arg3/x0)/x1).val.rvalue, (815.0 - 1500.0/4.0)/4.25);
+    printf("arg1 - (arg2 - arg3/x0)/x1 = %f [%lX;%lX] %f\n", (arg1 - (arg2 - arg3/x0)/x1).getFloat(), (arg1 - (arg2 - arg3/x0)/x1).val.lvalue, (arg1 - (arg2 - arg3/x0)/x1).val.rvalue, 108.0 - (815.0 - 1500.0/4.0)/4.25);
+    */
+
     SoftFloat64 x_f64[STEPS] = {4.0, 4.25};
     SoftFloat32 x_f32[STEPS] = {4.0, 4.25};
     half x_f16[STEPS] = {4.0_h, 4.25_h};
@@ -28,8 +65,6 @@ int main()
     posit32 x_p32_fma[STEPS] = {4.0, 4.25};
     posit16 x_p16_fma[STEPS] = {4.0, 4.25};
     posit8 x_p8_fma[STEPS] = {4.0, 4.25};
-
-
 
     std::cout << "[##] | S_DOUBLE| S_FLOAT | QPOSIT32| POSIT32'| POSIT32 |  S_HALF | QPOSIT16| POSIT16'| POSIT16| QPOSIT8 |  POSIT8'|  POSIT8 |\n"
               << "-----------------------------------------------------------------------------------------------------------------------------\n";
