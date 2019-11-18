@@ -22,8 +22,6 @@ public:
     const SoftPosit16& operator+=(const SoftPosit16& rhs) override;
     const SoftPosit16& operator*=(const SoftPosit16& rhs) override;
     const SoftPosit16& operator/=(const SoftPosit16& rhs) override;
-    const SoftPosit16& qma(const SoftPosit16& rhs1, const SoftPosit16& rhs2) override { return *this += (rhs1*rhs2); }
-    const SoftPosit16& qms(const SoftPosit16& rhs1, const SoftPosit16& rhs2) override { return *this -= (rhs1*rhs2); }
 };
 
 #endif // SOFTPOSIT16_H

@@ -20,8 +20,6 @@ public:
     const SoftFloat32& operator+=(const SoftFloat32& rhs) override;
     const SoftFloat32& operator*=(const SoftFloat32& rhs) override;
     const SoftFloat32& operator/=(const SoftFloat32& rhs) override;
-    const SoftFloat32& qma(const SoftFloat32& rhs1, const SoftFloat32& rhs2) override { return *this += (rhs1*rhs2); }
-    const SoftFloat32& qms(const SoftFloat32& rhs1, const SoftFloat32& rhs2) override { return *this -= (rhs1*rhs2); }
 };
 
 #endif // SoftFloat32_H

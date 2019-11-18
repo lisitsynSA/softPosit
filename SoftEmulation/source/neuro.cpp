@@ -11,7 +11,7 @@
 #include "SoftPosit8.h"
 #include "myneuro.h"
 
-typedef Float32 TYPE;
+typedef SoftQuire16 TYPE;
 
 int main(int argc, char *argv[])
 {
@@ -44,14 +44,14 @@ int main(int argc, char *argv[])
         bb->query(cba);
 
         int i=0;
-        while(i<10000)
+        while(i<1000)
         {
             bb->train(abc,tar1);
             bb->train(cba,tar2);
             i++;
-            if (i%1000 == 0)
+            if (i%100 == 0)
             {
-                std::cout << "\n[" << i/100 << "%]\n";
+                std::cout << "\n[" << i/10 << "%]\n";
                 bb->query(abc);
                 bb->query(cba);
             }

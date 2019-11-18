@@ -48,7 +48,7 @@ public:
                {
                    for(int outp =0; outp < out; outp++)
                    {
-                       matrix[inp][outp] =  ( ((T)rand() / (T)RAND_MAX) - (T)0.5)* (T)pow(out,-0.5);
+                       matrix[inp][outp] =  ( ((T)rand() / (T)RAND_MAX) - (T)0.5)* (T)pow(out,-0.7);
                    }
                }
            }
@@ -74,7 +74,7 @@ public:
                errors = (T*) malloc((out)*sizeof(T));
                for(int ou =0; ou < out; ou++)
                {
-                   errors[ou].qma(targets[ou] - hidden[ou], sigmoidasDerivate(hidden[ou]));
+                   errors[ou] = (targets[ou] - hidden[ou])* sigmoidasDerivate(hidden[ou]);
                }
            };
            void calcHidError(T *targets,T **outWeights,int inS, int outS)
@@ -125,7 +125,7 @@ template <class T>
 myNeuro<T>::myNeuro()
 {
     //--------многослойный
-    inputNeurons = 100;
+    /*inputNeurons = 100;
     outputNeurons =2;
     nlCount = 4;
     list = (nnLay*) malloc((nlCount)*sizeof(nnLay));
@@ -136,19 +136,19 @@ myNeuro<T>::myNeuro()
     list[0].setIO(100,20);
     list[1].setIO(20,6);
     list[2].setIO(6,3);
-    list[3].setIO(3,2);
+    list[3].setIO(3,2);*/
 
     //--------однослойный---------
-//    inputNeurons = 100;
-//    outputNeurons =2;
-//    nlCount = 2;
-//    list = (nnLay*) malloc((nlCount)*sizeof(nnLay));
+    inputNeurons = 100;
+    outputNeurons =2;
+    nlCount = 2;
+    list = (nnLay*) malloc((nlCount)*sizeof(nnLay));
 
-//    inputs = (T*) malloc((inputNeurons)*sizeof(T));
-//    targets = (T*) malloc((outputNeurons)*sizeof(T));
+    inputs = (T*) malloc((inputNeurons)*sizeof(T));
+    targets = (T*) malloc((outputNeurons)*sizeof(T));
 
-//    list[0].setIO(100,10);
-//    list[1].setIO(10,2);
+    list[0].setIO(100,10);
+    list[1].setIO(10,2);
 
 }
 

@@ -20,8 +20,6 @@ public:
     const SoftFloat64& operator+=(const SoftFloat64& rhs) override;
     const SoftFloat64& operator*=(const SoftFloat64& rhs) override;
     const SoftFloat64& operator/=(const SoftFloat64& rhs) override;
-    const SoftFloat64& qma(const SoftFloat64& rhs1, const SoftFloat64& rhs2) override { return *this += (rhs1*rhs2); }
-    const SoftFloat64& qms(const SoftFloat64& rhs1, const SoftFloat64& rhs2) override { return *this -= (rhs1*rhs2); }
 };
 
 #endif // SOFTFLOAT64_H
