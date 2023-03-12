@@ -1,7 +1,10 @@
 # softPosit
 Software emulation of IEEE 754 and Posit standarts
 
-# Prepare LLVM (already done):
+### Conferences:
+MIPT conference 62 (2019): Сравнительный анализ представлений вещественных чисел для задач обучения нейронных сетей.
+
+### Prepare LLVM (already done):
 	[LLVM]
 	git clone https://github.com/llvm-mirror/llvm.git
 	cd llvm
@@ -22,15 +25,15 @@ Software emulation of IEEE 754 and Posit standarts
 	git checkout release_90
 	rm .git* -rf
 
-# Prepare build system:
+### Prepare build system:
 	sudo apt-get install build-essential zlib1g-dev python cmake
 
-# Building:
+### Building:
 	./build.sh
 	Two folders will be created: BUILD and SOFT_POSIT
 	Compiler will be in SOFT_POSIT/bin
 
-# Commit message
+### Commit message
 Template: [TYPE] Description
 
 TYPES: INFR; LLVM; IEEE_754; POSIT; TESTS
